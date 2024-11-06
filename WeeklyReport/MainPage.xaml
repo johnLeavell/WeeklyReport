@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeeklyReport.MainPage">
+
+    <ScrollView>
+		  <StackLayout Padding="10">
+			<Label Text="Weekly Report" FontSize="12" FontAttributes="Bold" />
+			<Entry Placeholder="Highlights" x:Name="HighlightsEntry"/>
+			<Entry Placeholder="Challenges" x:Name="ChallengesEntry"/>
+			<Entry Placeholder="Interesting" x:Name="InterestingEntry"/>
+			<Entry Placeholder="Objectives" x:Name="ObjectivesEntry"/>
+			<Button Text="Submit" Clicked="OnSubmitClicked" />
+		</StackLayout>
+    </ScrollView>
+
+</ContentPage>
