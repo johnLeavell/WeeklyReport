@@ -1,17 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WeeklyReport.MainPage">
+             x:Class="WeeklyReport.MainPage"
+             Title="Weekly Report">
 
-    <ScrollView>
-		  <StackLayout Padding="10">
-			<Label Text="Weekly Report" FontSize="12" FontAttributes="Bold" />
-			<Entry Placeholder="Highlights" x:Name="HighlightsEntry"/>
-			<Entry Placeholder="Challenges" x:Name="ChallengesEntry"/>
-			<Entry Placeholder="Interesting" x:Name="InterestingEntry"/>
-			<Entry Placeholder="Objectives" x:Name="ObjectivesEntry"/>
-			<Button Text="Submit" Clicked="OnSubmitClicked" />
+	<ScrollView>
+		<StackLayout Padding="20" Spacing="15">
+			<Label Text="Weekly Report" 
+                   FontSize="18" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" 
+                   Margin="0, 10, 0, 20" />
+
+			<Label Text="Highlights:" FontSize="14" FontAttributes="Bold"/>
+			<Editor x:Name="HighlightsEditor" 
+                    TextChanged="OnTextChanged" 
+                    Placeholder="Enter highlights here..."
+                    AutoSize="TextChanges" 
+                    HeightRequest="120" />
+
+			<Label Text="Challenges:" FontSize="14" FontAttributes="Bold"/>
+			<Editor x:Name="ChallengesEditor" 
+                    TextChanged="OnTextChanged" 
+                    Placeholder="Enter challenges here..."
+                    AutoSize="TextChanges" 
+                    HeightRequest="120" />
+
+			<Label Text="Interesting:" FontSize="14" FontAttributes="Bold"/>
+			<Editor x:Name="InterestingEditor" 
+                    TextChanged="OnTextChanged" 
+                    Placeholder="Enter interesting points here..."
+                    AutoSize="TextChanges" 
+                    HeightRequest="120" />
+
+			<Label Text="Objectives:" FontSize="14" FontAttributes="Bold"/>
+			<Editor x:Name="ObjectivesEditor" 
+                    TextChanged="OnTextChanged" 
+                    Placeholder="Enter objectives here..."
+                    AutoSize="TextChanges" 
+                    HeightRequest="120" />
+
+			<Button Text="Submit" 
+                    Clicked="OnSubmitClicked" 
+                    FontSize="16" 
+                    BackgroundColor="#2196F3" 
+                    TextColor="White" 
+                    CornerRadius="10" 
+                    HeightRequest="50" 
+                    HorizontalOptions="FillAndExpand" />
 		</StackLayout>
-    </ScrollView>
-
+	</ScrollView>
 </ContentPage>
