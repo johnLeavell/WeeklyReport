@@ -41,6 +41,15 @@ namespace WeeklyReport
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string filePath = Path.Combine(desktopPath, fileName);
 
+            int counter = -1;
+            while (File.Exists(filePath))
+            {
+                string newFileName = $"Weekly_Report_{dateRange.Replace("/", "-")}_{counter}.docx";
+                filePath = Path.Combine(desktopPath, newFileName);
+                counter++;
+            }
+
+
             using (var doc = DocX.Create(filePath))
             {
                 doc.InsertParagraph($"Weekly Report: {dateRange}")
